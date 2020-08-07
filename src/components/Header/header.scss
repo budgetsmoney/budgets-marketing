@@ -1,0 +1,12 @@
+.header {
+  @apply lc-flex;
+  @apply lc-justify-between;
+  @apply lc-items-center;
+  @apply lc-bg-green;
+  @apply lc-p-32;
+
+  .logo {
+    max-width: 48px;
+    display: block;
+  }
+}

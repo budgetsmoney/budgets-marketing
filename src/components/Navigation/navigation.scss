@@ -1,0 +1,15 @@
+.navigation {
+  ul {
+    @apply lc-list-none;
+    @apply lc-flex;
+
+    li {
+      @apply lc-px-24;
+
+      a {
+        @apply lc-text-white;
+        @apply lc-font-bold;
+      }
+    }
+  }
+}
