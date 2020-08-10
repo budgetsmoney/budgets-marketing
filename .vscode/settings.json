@@ -3,5 +3,6 @@
   "typescript.preferences.quoteStyle": "single",
   "prettier.jsxSingleQuote": true,
   "prettier.singleQuote": true,
-  "cSpell.words": ["frontmatter", "tailwindcss", "semibold"]
+  "cSpell.words": ["frontmatter", "tailwindcss", "semibold", "gilroy"],
+  "tailwindCSS.emmetCompletions": true
 }

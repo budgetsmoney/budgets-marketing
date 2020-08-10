@@ -10,5 +10,5 @@
  */
 module.exports = {
   syntax: 'postcss-scss',
-  plugins: [require('tailwindcss')]
+  plugins: [require('tailwindcss'), require('autoprefixer')]
 };

@@ -1,9 +1,12 @@
+import React from 'react';
 import { action } from '@storybook/addon-actions';
-// import { withA11y } from '@storybook/addon-a11y';
+import { withA11y } from '@storybook/addon-a11y';
+import { addDecorator } from '@storybook/react';
 import { addParameters } from '@storybook/react';
-
-// Styles
-import '../src/styles/index.scss';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+import { withInfo } from '@storybook/addon-info';
+import StorybookWrapper from './StoryWrapper';
+import StoryPropTypesTable from './StoryPropTypesTable';
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -21,7 +24,19 @@ window.___navigate = pathname => {
   action('NavigateTo:')(pathname);
 };
 
-// addDecorator(withA11y);
+addDecorator(storyFn => <StorybookWrapper>{storyFn()}</StorybookWrapper>);
+addDecorator(
+  withInfo({
+    inline: true,
+    source: false,
+    header: false,
+    propTablesExclude: [StorybookWrapper],
+    TableComponent: StoryPropTypesTable
+  })
+);
+
+addDecorator(withA11y);
+
 addParameters({
   viewMode: 'docs',
   options: {
@@ -29,5 +44,12 @@ addParameters({
       a[1].kind === b[1].kind
         ? 0
         : a[1].id.localeCompare(b[1].id, undefined, { numeric: true })
+  }
+});
+
+addParameters({
+  docs: {
+    container: DocsContainer,
+    page: DocsPage
   }
 });

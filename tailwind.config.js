@@ -13,7 +13,8 @@ module.exports = {
       warn: '#f8ba44',
       success: '#21cdac',
       gray: {
-        light: '#fafafa'
+        light: '#e5e5e5',
+        lighter: '#fafafa'
       },
       primary: '#21cdac',
       secondary: '#28a7db'

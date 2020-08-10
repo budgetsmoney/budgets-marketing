@@ -10,9 +10,7 @@ h5,
 .h5,
 h6,
 .h6 {
-  @apply lc-font-bold;
-  @apply lc-mt-32;
-  @apply lc-mb-16;
+  @apply lc-font-bold lc-mt-32 lc-mb-16;
 }
 
 h1,
@@ -55,8 +53,7 @@ p {
 
 ul,
 ol {
-  @apply lc-my-24;
-  @apply lc-list-inside;
+  @apply lc-my-24 lc-list-inside;
 }
 
 ul {

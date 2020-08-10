@@ -7,8 +7,11 @@ import { Navigation } from '..';
 import './header.scss';
 
 export type HeaderProps = {
+  /** Site title for logo alt text. */
   siteTitle?: string;
+  /** Company logo. */
   logo?: string;
+  /** Primary navigiaton items. */
   navigation: Array<{
     label: string;
     url: string;

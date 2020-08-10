@@ -1,7 +1,4 @@
 html,
 body {
-  @apply lc-font-sans;
-  @apply lc-antialiased;
-  @apply lc-text-black;
-  @apply lc-text-md;
+  @apply lc-font-sans lc-antialiased lc-text-black lc-text-md;
 }

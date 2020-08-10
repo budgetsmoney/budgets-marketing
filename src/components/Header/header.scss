@@ -1,12 +1,12 @@
 .header {
-  @apply lc-flex;
-  @apply lc-justify-between;
-  @apply lc-items-center;
-  @apply lc-bg-green;
-  @apply lc-p-32;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: theme('colors.green');
+  padding: theme('padding.32');
 
   .logo {
-    max-width: 48px;
+    max-width: theme('spacing.48');
     display: block;
   }
 }

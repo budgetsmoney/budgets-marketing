@@ -1,11 +1,15 @@
 // Base
+// See https://tailwindcss.com/docs/adding-base-styles/
+
+@tailwind;
 
 @import './variables';
-@import './normalize';
 @import './fonts';
-@import './tailwind';
 @import './base';
 @import './typography';
+
+@tailwind components;
+@tailwind utilities;
 
 // Components
 

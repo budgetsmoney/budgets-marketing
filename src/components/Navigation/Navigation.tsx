@@ -14,8 +14,8 @@ export type NavigationProps = {
 const Navigation = ({ items }: NavigationProps) => (
   <nav className="navigation">
     <ul>
-      {items.map(({ label, url }) => (
-        <li key={url}>
+      {items.map(({ label, url }, index) => (
+        <li key={index}>
           <Link to={url}>{label}</Link>
         </li>
       ))}

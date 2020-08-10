@@ -2,10 +2,12 @@ const path = require('path');
 
 // Gatsby Storybook documentation: https://www.gatsbyjs.org/docs/visual-testing-with-storybook/
 module.exports = {
-  stories: ['../src/**/*.stories.js', '../src/**/*.stories.tsx'],
+  stories: ['../src/**/*.stories.(js|tsx|mdx)'],
   addons: [
     '@storybook/addon-actions',
     '@storybook/addon-links',
+    '@storybook/addon-knobs/register',
+    '@storybook/addon-notes/register',
     '@storybook/addon-a11y/register',
     '@storybook/addon-viewport/register',
     {
@@ -46,7 +48,7 @@ module.exports = {
     // Add SASS support
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
+      use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../src')
     });
 
@@ -55,15 +57,22 @@ module.exports = {
 
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
-      loader: require.resolve('babel-loader'),
-      options: {
-        presets: [['react-app', { flow: false, typescript: true }]],
-        plugins: [
-          require.resolve('@babel/plugin-proposal-class-properties'),
-          // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
-          require.resolve('babel-plugin-remove-graphql-queries')
-        ]
-      }
+      use: [
+        {
+          loader: require.resolve('babel-loader'),
+          options: {
+            presets: [['react-app', { flow: false, typescript: true }]],
+            plugins: [
+              require.resolve('babel-plugin-react-require'),
+              require.resolve('@babel/plugin-proposal-class-properties'),
+              // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
+              require.resolve('babel-plugin-remove-graphql-queries'),
+              require.resolve('babel-plugin-react-docgen')
+            ]
+          }
+        },
+        require.resolve('react-docgen-typescript-loader')
+      ]
     });
     config.resolve.extensions.push('.ts', '.tsx');
 
