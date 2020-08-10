@@ -1,0 +1,48 @@
+.pagination {
+  @apply lc-flex;
+
+  &-link,
+  &-location {
+    @apply lc-px-16;
+    @apply lc-py-8;
+    @apply lc-border;
+    @apply lc-text-sm;
+    @apply lc-font-medium;
+    @apply lc-transition;
+    @apply lc-ease-in-out;
+    @apply lc-duration-150;
+  }
+
+  &-link {
+    &:first-child {
+      @apply lc-rounded-l;
+    }
+
+    &:last-child {
+      @apply lc-rounded-r;
+    }
+
+    &:hover {
+      @apply lc-text-black;
+    }
+
+    &:focus {
+      @apply lc-z-10;
+      @apply lc-outline-none;
+      @apply lc-border-blue;
+    }
+
+    &:active {
+      @apply lc-bg-gray-light;
+    }
+  }
+
+  &-location {
+    @apply lc-border-r-0;
+    @apply lc-border-l-0;
+  }
+
+  & .disabled {
+    pointer-events: none;
+  }
+}

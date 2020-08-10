@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import classNames from 'classnames';
 
 // Styles
 import './pagination.scss';
@@ -21,29 +22,35 @@ const Pagination = ({ pageContext }: PaginationProps) => {
     numberOfPages
   } = pageContext;
 
+  if (numberOfPages <= 1) return <></>;
+
   return (
     <nav className="pagination" role="navigation">
-      <div>
-        {previousPagePath && (
-          <Link to={previousPagePath} rel="prev">
-            Previous
-          </Link>
+      <Link
+        className={classNames(
+          'pagination-link',
+          !previousPagePath ? 'disabled' : ''
         )}
+        to={previousPagePath}
+        rel="prev"
+      >
+        Previous
+      </Link>
+
+      <div className="pagination-location">
+        Page {humanPageNumber} of {numberOfPages}
       </div>
 
-      {numberOfPages > 1 && (
-        <div className="pagination-location">
-          Page {humanPageNumber} of {numberOfPages}
-        </div>
-      )}
-
-      <div>
-        {nextPagePath && (
-          <Link to={nextPagePath} rel="next">
-            Next
-          </Link>
+      <Link
+        className={classNames(
+          'pagination-link',
+          !nextPagePath ? 'disabled' : ''
         )}
-      </div>
+        to={nextPagePath}
+        rel="next"
+      >
+        Next
+      </Link>
     </nav>
   );
 };
