@@ -1,0 +1,17 @@
+.navigation {
+  ul {
+    display: flex;
+    list-style: none;
+
+    li {
+      @apply lc-px-24;
+      padding: 0 theme('padding.24');
+
+      a {
+        color: theme('colors.white');
+        font-weight: theme('fontWeight.bold');
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Header } from '..';
+
+<Meta title="Header" component={Header} />
+
+# Header
+
+With `MDX` we can define a story for `Header` right in the middle of our
+markdown documentation.
+
+<Preview>
+    <Story name="Header">
+        <Header
+            siteTitle="Budgets"
+            logo="https://budgets.money/content/images/2020/03/BudgetsLogoKO-1.png"
+            navigation={[
+                {
+                    label: 'Home',
+                    url: '#'
+                },
+                {
+                    label: 'Blog',
+                    url: '#'
+                }
+            ]}
+        />
+    </Story>
+</Preview>

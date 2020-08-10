@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: theme('colors.green');
+  padding: theme('padding.32');
+
+  .logo {
+    max-width: theme('spacing.48');
+    display: block;
+  }
+}

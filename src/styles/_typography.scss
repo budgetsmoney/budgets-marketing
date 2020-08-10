@@ -1,0 +1,65 @@
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  @apply lc-font-bold lc-mt-32 lc-mb-16;
+}
+
+h1,
+.h1 {
+  @apply lc-text-4xl;
+}
+
+h2,
+.h2 {
+  @apply lc-text-3xl;
+}
+
+h3,
+.h3 {
+  @apply lc-text-2xl;
+}
+
+h4,
+.h4 {
+  @apply lc-text-xl;
+}
+
+h5,
+.h5 {
+  @apply lc-text-lg;
+}
+
+h6,
+.h6 {
+  @apply lc-text-md;
+}
+
+a {
+  @apply lc-text-secondary;
+}
+
+p {
+  @apply lc-my-24;
+}
+
+ul,
+ol {
+  @apply lc-my-24 lc-list-inside;
+}
+
+ul {
+  @apply lc-list-disc;
+}
+
+ol {
+  @apply lc-list-decimal;
+}

@@ -1,0 +1,11 @@
+.lc-section {
+  @apply lc-py-24;
+
+  @screen sm {
+    @apply lc-py-32;
+  }
+
+  @screen md {
+    @apply lc-py-48;
+  }
+}
